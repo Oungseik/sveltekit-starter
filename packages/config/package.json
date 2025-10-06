@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@repo/config",
+  "description": "Domain specific configuration for the App",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "check": "biome check --write .",
+    "build": "tsdown",
+    "check-types": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.23",
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.3"
+  }
+}

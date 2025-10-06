@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "e-state",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "turbo $@ check",
+    "dev": "turbo $@ dev",
+    "preview": "turbo $@ preview",
+    "build": "turbo $@ build",
+    "check-types": "turbo $@ check-types",
+    "format": "turbo $@ format",
+    "test": "turbo $@ test",
+    "shadcn": "pnpm dlx shadcn-svelte@latest add $@ -c packages/ui"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.5",
+    "turbo": "^2.5.8"
+  },
+  "packageManager": "pnpm@10.14.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "esbuild"
+    ]
+  }
+}
