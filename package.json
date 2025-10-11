@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "e-state",
+  "name": "svelte_kit_starter",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -14,6 +14,7 @@
     "check-types": "turbo $@ check-types",
     "format": "turbo $@ format",
     "test": "turbo $@ test",
+    "shadcn-extra": "pnpm dlx jsrepo add --cwd packages/ui",
     "shadcn": "pnpm dlx shadcn-svelte@latest add $@ -c packages/ui"
   },
   "devDependencies": {

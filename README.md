@@ -1,7 +1,4 @@
-# E-State
-
-[![License](https://img.shields.io/github/license/oung/e-state)](https://github.com/oung/e-state/blob/main/LICENSE)
-[![Build](https://img.shields.io/github/actions/workflow/status/oung/e-state/ci.yml)](https://github.com/oung/e-state/actions)
+# Svelte-Kit Starter
 
 A modern SvelteKit monorepo with shared UI components and configuration.
 
@@ -29,7 +26,7 @@ This is a monorepo project built with SvelteKit that follows modern development 
 
 ## Prerequisites
 
-- Node.js (v18 or higher recommended)
+- Node.js (v20 or higher recommended)
 - PNPM (v10 or higher)
 - Git
 
@@ -37,10 +34,9 @@ This is a monorepo project built with SvelteKit that follows modern development 
 
 ### 1. Clone the repository
 
-```bash
-git clone <repository-url>
-cd e-state
-```
+Click `Use this template` button on the right side or clone it as you want.
+
+> Delete the `.git` directory if you clone this project directly.
 
 ### 2. Install dependencies
 
@@ -48,16 +44,7 @@ cd e-state
 pnpm install
 ```
 
-### 3. Environment Variables
-
-For the website application, you may need to set up environment variables. Create a `.env` file in the `apps/website` directory based on the example below:
-
-```bash
-# Environment variables for apps/website
-PUBLIC_BASE_URL=http://localhost:5173
-```
-
-### 4. Development
+### 3. Development
 
 To start the development server for the website:
 
@@ -65,9 +52,7 @@ To start the development server for the website:
 pnpm dev
 ```
 
-This will start the SvelteKit development server. The website will be available at `http://localhost:5173`.
-
-### 5. Other Commands
+### 4. Other Commands
 
 - **Build the project**: `pnpm build`
 - **Run tests**: `pnpm test`
@@ -75,6 +60,8 @@ This will start the SvelteKit development server. The website will be available 
 - **Format code**: `pnpm format`
 - **Check types**: `pnpm check-types`
 - **Preview production build**: `pnpm preview`
+
+Or update as your wish.
 
 ## Project Structure
 
@@ -109,34 +96,8 @@ This will start the SvelteKit development server. The website will be available 
 - [Turborepo](https://turbo.build/repo) - Build system
 - [Biome](https://biomejs.dev/) - Formatter and linter
 - [Vite](https://vitejs.dev/) - Build tool
-- [bits-ui](https://www.bits-ui.com/) - Accessible Svelte UI primitives
+- [shadcn-svelte](https://shadcn-svelte.com/) and [shadcn-svelte-extras](https://www.shadcn-svelte-extras.com/) - Component library
 - [Lucide Svelte](https://lucide.dev/) - Icon library
-
-## Architecture
-
-### Monorepo Structure
-
-This project follows a monorepo architecture with the following structure:
-
-```
-├── apps/
-│   └── website/          # SvelteKit application
-│       ├── src/
-│       │   ├── lib/      # Shared application utilities
-│       │   ├── routes/   # Page routes
-│       │   └── app.html  # Application entry point
-│       └── static/       # Static assets
-├── packages/
-│   ├── config/           # Shared configuration, enums, and domain logic
-│   └── ui/               # Reusable UI components library
-│       └── src/lib/components/ui/  # Individual component directories
-└── ...
-```
-
-### Shared Packages
-
-- **`@repo/config`**: Contains shared constants, enums, and domain logic used across packages
-- **`@repo/ui`**: Houses reusable UI components that follow consistent design patterns
 
 ## Development Workflow
 
@@ -148,7 +109,27 @@ This project follows a monorepo architecture with the following structure:
 
 ### Adding new UI components
 
-Components can be added to the `packages/ui/src/lib/components/ui/` directory and will be automatically exported through the package's `exports` field.
+To add new [shadcn-svelte](https://shadcn-svelte.com/) component
+
+```bash
+# To add shadcn-svelte component, run this in project root or
+pnpm run shadcn <component name>
+
+# Run this command in packages/ui directory
+pnpm dlx shadcn-svelte@latest add <component name>
+```
+
+To add new [shadcn-svelte-extra](https://www.shadcn-svelte-extras.com/)
+
+```bash
+# To add shadcn-svelte-extra component, run this in project root or
+pnpm run shadcn-extra <component name>
+
+# install jsrepo globally and run this inside packages/ui directory
+jsrepo add <component name>
+```
+
+Consult the documentation for the component name.
 
 ### Code Formatting and Linting
 
@@ -174,20 +155,6 @@ We welcome contributions from the community! Here's how you can help:
 3. **Follow the code style** enforced by Biome
 4. **Add tests** for any new features or bug fixes
 5. **Update documentation** as needed
-
-### Setting up for Development
-
-```bash
-# Clone your fork
-git clone https://github.com/YOUR-USERNAME/e-state.git
-cd e-state
-
-# Install dependencies
-pnpm install
-
-# Start development server
-pnpm dev
-```
 
 ### Submitting a Pull Request
 
