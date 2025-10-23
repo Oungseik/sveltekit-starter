@@ -18,7 +18,7 @@
     "shadcn": "pnpm dlx shadcn-svelte@latest add $@ -c packages/ui"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.5",
+    "@biomejs/biome": "^2.2.7",
     "turbo": "^2.5.8"
   },
   "packageManager": "pnpm@10.18.0",
