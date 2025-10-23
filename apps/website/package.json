@@ -53,13 +53,16 @@
     "@inlang/paraglide-js": "^2.4.0",
     "@lucide/svelte": "^0.544.0",
     "@repo/config": "workspace:*",
+    "@repo/convex": "workspace:*",
     "@repo/ui": "workspace:*",
     "clsx": "^2.1.1",
+    "convex-svelte": "^0.0.11",
     "dotenv": "^17.2.3",
     "libphonenumber-js": "^1.12.24",
     "mode-watcher": "^1.1.0",
     "rate-limiter-flexible": "^8.1.0",
     "runed": "^0.34.0",
+    "svelte-sonner": "^1.0.5",
     "zod": "^4.1.12"
   }
 }
