@@ -1,26 +1,35 @@
 import { register } from "node:module";
 import { SpanStatusCode, trace } from "@opentelemetry/api";
 import { getNodeAutoInstrumentations } from "@opentelemetry/auto-instrumentations-node";
+import { OTLPLogExporter } from "@opentelemetry/exporter-logs-otlp-proto";
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-proto";
 import { PinoInstrumentation } from "@opentelemetry/instrumentation-pino";
-import { NodeSDK } from "@opentelemetry/sdk-node";
+import { logs, NodeSDK, tracing } from "@opentelemetry/sdk-node";
 import { ORPCInstrumentation } from "@orpc/otel";
 import { createAddHookMessageChannel } from "import-in-the-middle";
 
 const { registerOptions } = createAddHookMessageChannel();
 register("import-in-the-middle/hook.mjs", import.meta.url, registerOptions);
 
+const logExporter = new OTLPLogExporter({ concurrencyLimit: 3 });
+const traceExporter = new OTLPTraceExporter({ concurrencyLimit: 3 });
+
 const sdk = new NodeSDK({
   serviceName: "ORPC",
-  traceExporter: new OTLPTraceExporter(),
+  logRecordProcessor: new logs.BatchLogRecordProcessor(logExporter),
+  spanProcessor: new tracing.BatchSpanProcessor(traceExporter),
+  traceExporter: traceExporter,
   instrumentations: [
-    new PinoInstrumentation(),
     getNodeAutoInstrumentations(),
+    new PinoInstrumentation(),
     new ORPCInstrumentation(),
   ],
 });
 
 sdk.start();
+process.on("SIGTERM", () => {
+  sdk.shutdown().finally(() => process.exit(0));
+});
 
 const tracer = trace.getTracer("uncaught-errors");
 
