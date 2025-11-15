@@ -12,6 +12,14 @@ const config = {
       "@lib": "../../packages/ui/src/lib",
       "@lib/*": "../../packages/ui/src/lib/*",
     },
+    experimental: {
+      tracing: {
+        server: process.env.OBSERVABILITY,
+      },
+      instrumentation: {
+        server: process.env.OBSERVABILITY,
+      },
+    },
   },
   compilerOptions: {},
 };
