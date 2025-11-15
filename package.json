@@ -15,7 +15,11 @@
     "format": "turbo $@ format",
     "test": "turbo $@ test",
     "shadcn-extra": "pnpm dlx jsrepo add --cwd packages/ui",
-    "shadcn": "pnpm dlx shadcn-svelte@latest add -c packages/ui"
+    "shadcn": "pnpm dlx shadcn-svelte@latest add -c packages/ui",
+    "db:push": "turbo db:push",
+    "db:studio": "turbo db:studio",
+    "db:generate": "turbo db:generate",
+    "db:migrate": "turbo  db:migrate"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.5",
