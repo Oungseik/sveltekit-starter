@@ -34,4 +34,7 @@ declare global {
   }
 
   var $client: RouterClient<typeof router> | undefined;
+  interface Window {
+    dehydrated: DehydratedState;
+  }
 }

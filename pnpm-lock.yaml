@@ -26,9 +26,15 @@ importers:
       '@lucide/svelte':
         specifier: ^0.553.0
         version: 0.553.0(svelte@5.43.6)
+      '@orpc/client':
+        specifier: ^1.11.2
+        version: 1.11.2
       '@orpc/server':
         specifier: ^1.11.2
         version: 1.11.2(ws@8.18.3)
+      '@orpc/tanstack-query':
+        specifier: ^1.11.2
+        version: 1.11.2(@orpc/client@1.11.2)(@tanstack/query-core@5.90.9)
       '@repo/config':
         specifier: workspace:*
         version: link:../../packages/config
@@ -38,6 +44,9 @@ importers:
       '@repo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@tanstack/svelte-query':
+        specifier: ^6.0.7
+        version: 6.0.7(svelte@5.43.6)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -919,6 +928,12 @@ packages:
   '@orpc/standard-server@1.11.2':
     resolution: {integrity: sha512-AXMNHXDgUCCfO4DCFGteCmWSrnG6FbydVBEMA0/HacGwi5oxDa3psHwEl/Zp7vRgTtHBiZsxaCfWQEjM+8e+2A==}
 
+  '@orpc/tanstack-query@1.11.2':
+    resolution: {integrity: sha512-X8GCBgDuHINIE6d8sDbifbPSKzuVgg6qGItb5geqtbyV6WRs2YolYleC91XCIW64kTTPMs3H8b/qyi8mrhQbDg==}
+    peerDependencies:
+      '@orpc/client': 1.11.2
+      '@tanstack/query-core': '>=5.80.2'
+
   '@oxc-project/runtime@0.97.0':
     resolution: {integrity: sha512-yH0zw7z+jEws4dZ4IUKoix5Lh3yhqIJWF9Dc8PWvhpo7U7O+lJrv7ZZL4BeRO0la8LBQFwcCewtLBnVV7hPe/w==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -1278,6 +1293,14 @@ packages:
     resolution: {integrity: sha512-4+9w8ZHOiGnpcGI6z1TVVfWaX/koK7fKeSYF3qlYg2xpBtbteP2ddBxiarL+HVgfSJGeK5RIxRQmKm4rTJJAwA==}
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
+
+  '@tanstack/query-core@5.90.9':
+    resolution: {integrity: sha512-UFOCQzi6pRGeVTVlPNwNdnAvT35zugcIydqjvFUzG62dvz2iVjElmNp/hJkUoM5eqbUPfSU/GJIr/wbvD8bTUw==}
+
+  '@tanstack/svelte-query@6.0.7':
+    resolution: {integrity: sha512-XSzU1JdCo142xjtL/jovi1W3dOK976eV7KZUuWJJ7fnKIaQuwbXBInyltno+hXGJLfHeLb43FUg8b4gmN9L+DQ==}
+    peerDependencies:
+      svelte: ^5.25.0
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -3693,6 +3716,14 @@ snapshots:
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
+  '@orpc/tanstack-query@1.11.2(@orpc/client@1.11.2)(@tanstack/query-core@5.90.9)':
+    dependencies:
+      '@orpc/client': 1.11.2
+      '@orpc/shared': 1.11.2
+      '@tanstack/query-core': 5.90.9
+    transitivePeerDependencies:
+      - '@opentelemetry/api'
+
   '@oxc-project/runtime@0.97.0': {}
 
   '@oxc-project/types@0.97.0': {}
@@ -3950,6 +3981,13 @@ snapshots:
       '@tailwindcss/oxide': 4.1.17
       tailwindcss: 4.1.17
       vite: 7.2.2(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)
+
+  '@tanstack/query-core@5.90.9': {}
+
+  '@tanstack/svelte-query@6.0.7(svelte@5.43.6)':
+    dependencies:
+      '@tanstack/query-core': 5.90.9
+      svelte: 5.43.6
 
   '@testing-library/dom@10.4.1':
     dependencies:
