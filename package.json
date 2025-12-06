@@ -14,7 +14,7 @@
     "check-types": "turbo $@ check-types",
     "format": "turbo $@ format",
     "test": "turbo $@ test",
-    "shadcn-extra": "pnpm dlx jsrepo add --cwd packages/ui",
+    "shadcn-extras": "pnpm dlx jsrepo add --cwd packages/ui",
     "shadcn": "pnpm dlx shadcn-svelte@latest add -c packages/ui",
     "db:push": "turbo db:push",
     "db:studio": "turbo db:studio",

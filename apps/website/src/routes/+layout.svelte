@@ -1,6 +1,5 @@
 <script lang="ts">
   import "@fontsource/inter";
-  import { Toaster } from "@repo/ui/sonner";
   import { QueryClientProvider, dehydrate } from "@tanstack/svelte-query";
   import { ModeWatcher } from "mode-watcher";
 
@@ -22,6 +21,5 @@
 
 <QueryClientProvider client={data.queryClient}>
   <ModeWatcher />
-  <Toaster richColors />
   {@render children()}
 </QueryClientProvider>
