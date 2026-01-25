@@ -17,11 +17,6 @@ Use these for fundamental development tasks:
   /scaffold-auth-route /dashboard Dashboard
   ```
 
-- **`generate-shadcn-component`** - Add styled UI components
-  ```bash
-  /generate-shadcn-component MyButton primary
-  ```
-
 ### ⚡ Optimization (Medium Priority)
 Use these for performance and maintenance:
 
