@@ -44,5 +44,5 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
     }
   },
-  "globalEnv": ["BETTER_AUTH_SECRET", "DATABASE_URL"]
+  "globalEnv": ["PUBLIC_ENVIRONMENT", "BETTER_AUTH_SECRET", "DATABASE_URL"]
 }
