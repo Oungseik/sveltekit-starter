@@ -1,4 +1,4 @@
-import { os as base, ORPCError } from "@orpc/server";
+import { ORPCError, os as base } from "@orpc/server";
 
 type Context = {
   session?: {
@@ -41,4 +41,3 @@ export const authMiddleware = os.middleware(async ({ context, next }) => {
 
   return next({ context: { session } });
 });
-

@@ -10,7 +10,7 @@ const pattern = new RegExp(`[${Object.keys(replacements).join("")}]`, "g");
 export function createDehydratedScript(dehydratedState: DehydratedState) {
   const escaped = JSON.stringify(dehydratedState).replace(
     pattern,
-    (match) => replacements[match as keyof typeof replacements],
+    (match) => replacements[match as keyof typeof replacements]
   );
   return `<script>window.dehydrated = ${escaped}</script>`;
 }

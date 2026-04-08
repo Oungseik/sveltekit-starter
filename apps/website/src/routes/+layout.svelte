@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "@fontsource/inter";
   import { QueryClientProvider, dehydrate } from "@tanstack/svelte-query";
   import { ModeWatcher } from "mode-watcher";
 

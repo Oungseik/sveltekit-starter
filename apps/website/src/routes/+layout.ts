@@ -1,6 +1,8 @@
 import { StandardRPCJsonSerializer } from "@orpc/client/standard";
-import { hydrate, QueryClient } from "@tanstack/svelte-query";
+import { QueryClient, hydrate } from "@tanstack/svelte-query";
+
 import { browser } from "$app/environment";
+
 import type { LayoutLoad } from "./$types";
 
 const serializer = new StandardRPCJsonSerializer();

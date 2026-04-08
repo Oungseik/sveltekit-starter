@@ -1,6 +1,6 @@
-/** 
-  * TODO uncomment this and install dependencies if need logger with instrumentation
-  * */
+/**
+ * TODO uncomment this and install dependencies if need logger with instrumentation
+ * */
 // import { isSpanContextValid, trace } from "@opentelemetry/api";
 // import pino from "pino";
 // import { env } from "$env/dynamic/public";
