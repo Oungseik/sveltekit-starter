@@ -8,3 +8,6 @@ bun.lockb
 static/
 src/lib/components/ui
 lib/hooks
+
+*.ts
+*.js

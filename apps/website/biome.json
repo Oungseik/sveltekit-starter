@@ -1,0 +1,14 @@
+{
+  "extends": ["../../biome.json"],
+  "files": {
+    "includes": [
+      "!**/*.html",
+      "!**/*.svelte",
+      "!**/node_modules",
+      "!**/paraglide",
+      "!build",
+      "!.svelte-kit",
+      "!.turbo"
+    ]
+  }
+}

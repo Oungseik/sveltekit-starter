@@ -12,8 +12,9 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check-types": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write .",
-    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write . && biome format --write .",
+    "lint": "biome lint .",
+    "lint:eslint": "prettier --check . && eslint .",
     "test:unit": "bunx --bun vitest",
     "test": "npm run test:unit -- --run"
   },
