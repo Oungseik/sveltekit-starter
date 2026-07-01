@@ -78,6 +78,40 @@ Default section order:
 
 When the user requests a durable behavior change, record it here or in the relevant child AGENTS.md
 
+## Project Scope
+
+- This is a pnpm/Turborepo SvelteKit monorepo.
+- Root files own workspace tooling, dependency policy, shared verification commands, environment examples, and DOX hierarchy.
+- Runtime application work lives under `apps/`.
+- Shared workspace packages live under `packages/`.
+
+## Ownership
+
+- Root owns `package.json`, `pnpm-workspace.yaml`, `turbo.json`, `biome.json`, `flake.*`, `.env.example`, and top-level documentation.
+- `apps/AGENTS.md` owns app workspace rules and indexes runnable applications.
+- `packages/AGENTS.md` owns shared package rules and indexes reusable packages.
+- Generated/cache/output directories such as `.turbo/`, `.svelte-kit/`, `build/`, `dist/`, and `node_modules/` are tool output, not source contracts.
+
+## Local Contracts
+
+- Use pnpm workspace commands from the root unless a package-local script is intentionally narrower.
+- Keep secrets out of docs and source. `.env.example` documents required variables; local `.env` files hold real values.
+- Root Turbo tasks define cross-package command names; update `turbo.json` when adding durable workspace scripts that should run through Turbo.
+- Biome is the root formatter/linter baseline. Child configs may narrow file includes for their toolchains.
+
+## Work Guidance
+
+- Prefer existing workspace packages before adding new dependencies or utilities.
+- Keep app-specific runtime behavior in `apps/website`; keep reusable UI, database, and shared config in their packages.
+- When adding a new durable app or package, add or update the nearest AGENTS.md and refresh the parent Child DOX Index in the same change.
+
+## Verification
+
+- Root checks: `pnpm check`, `pnpm check-types`, `pnpm test`, `pnpm build`.
+- Formatting: `pnpm format`.
+- Database commands require a valid root `.env`: `pnpm db:generate`, `pnpm db:migrate`, `pnpm db:push`, `pnpm db:studio`.
+
 ## Child DOX Index
 
-This project is not yet indexed. Before continuing you must scan the project, build the DOX tree and replace this message with the actual index. Go deep and scan files recursively to properly evaluate complexity and create nested DOX files where needed.
+- `apps/AGENTS.md` - runnable applications; currently indexes `apps/website`.
+- `packages/AGENTS.md` - reusable workspace packages; currently indexes `packages/config`, `packages/db`, and `packages/ui`.
