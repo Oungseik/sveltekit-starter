@@ -1,0 +1,12 @@
+# Name of the session
+name: svelte-starter
+# Root directory of the session
+on_create:
+# Commands to execute when closing the session
+on_stop:
+# List of windows of session
+windows:
+  # window1 is the name of the window
+  - editor:
+      panes:
+        - 

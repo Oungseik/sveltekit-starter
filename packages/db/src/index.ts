@@ -1,19 +1,10 @@
 import { SQL } from "bun";
 import { drizzle } from "drizzle-orm/bun-sql";
-import { account, session, twoFactor, user, verification } from "./schema/auth";
+import { relations } from "./schema/relations";
 
 export const connectDb = (dbURL: string) => {
   const client = new SQL(dbURL);
-  return drizzle({
-    client,
-    schema: {
-      account,
-      session,
-      twoFactor,
-      user,
-      verification,
-    },
-  });
+  return drizzle({ client, relations });
 };
 
 export * from "drizzle-orm";
