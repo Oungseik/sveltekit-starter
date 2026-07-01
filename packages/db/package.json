@@ -4,7 +4,6 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "bun --bun run with-env drizzle-kit studio",
     "with-env": "dotenv -e ../../.env --",
     "check": "biome check --write .",
     "build": "tsdown",

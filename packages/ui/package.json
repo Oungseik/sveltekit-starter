@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "svelte-kit sync || echo ''",
     "shadcn": "pnpm dlx shadcn-svelte@latest add",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo-experimental-api",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch --tsgo-experimental-api"
   },
   "exports": {
     "./*": "./src/lib/components/ui/*/index.js",
@@ -23,6 +23,7 @@
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.2",
+    "@typescript/native-preview": "7.0.0-dev.20260630.1",
     "bits-ui": "^2.18.1",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.6.19",
