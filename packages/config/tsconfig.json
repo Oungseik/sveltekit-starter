@@ -10,7 +10,7 @@
       "*": ["./*"],
       "@/*": ["./src/*"]
     },
-   "outDir": "./dist",
+    "outDir": "./dist",
     "types": ["bun"],
     "composite": true
   },
