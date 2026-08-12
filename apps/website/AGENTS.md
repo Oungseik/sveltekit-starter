@@ -13,11 +13,12 @@
 
 ## Local Contracts
 
-- `$lib` is app-local. `@lib` is aliased to `../../packages/ui/src/lib` for shared UI internals.
+- `#lib` is the app-local subpath import declared in `package.json`. Shared UI is consumed through `@repo/ui`.
 - oRPC procedures are collected in `src/lib/server/orpc/router.ts` and exposed by `src/routes/rpc/[...rest]/+server.ts`.
 - Server database access goes through `src/lib/server/db.ts`, which calls `@repo/db`.
 - Better Auth setup lives in `src/lib/auth.ts`; the session shape used by SvelteKit locals is declared in `src/app.d.ts`.
 - Paraglide output under `src/lib/paraglide/` is generated from `project.inlang/` and `i18n/`; prefer editing source messages/settings over generated files.
+- Required environment variables use SvelteKit static imports; optional variables use dynamic imports.
 
 ## Work Guidance
 

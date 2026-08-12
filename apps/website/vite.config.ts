@@ -15,10 +15,6 @@ export default defineConfig({
       preprocess: [vitePreprocess(), mdsvex()],
       adapter: adapter(),
       env: { dir: "../../" },
-      alias: {
-        "@lib": "../../packages/ui/src/lib",
-        "@lib/*": "../../packages/ui/src/lib/*",
-      },
     }),
     devtoolsJson(),
     paraglideVitePlugin({ project: "./project.inlang", outdir: "./src/lib/paraglide" }),

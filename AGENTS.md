@@ -97,6 +97,9 @@ When the user requests a durable behavior change, record it here or in the relev
 - Use pnpm workspace commands from the root unless a package-local script is intentionally narrower.
 - Keep secrets out of docs and source. `.env.example` documents required variables; local `.env` files hold real values.
 - Root Turbo tasks define cross-package command names; update `turbo.json` when adding durable workspace scripts that should run through Turbo.
+- In SvelteKit code, use static environment imports for required variables and dynamic imports only for optional variables.
+- Svelte packages use TypeScript 6 for framework compatibility; non-Svelte TypeScript packages use TypeScript 7 for faster checks when supported.
+- Use tsdown for non-Svelte package builds.
 - Biome is the root formatter/linter baseline. Child configs may narrow file includes for their toolchains.
 
 ## Work Guidance

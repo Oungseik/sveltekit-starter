@@ -13,6 +13,7 @@
 
 - Public API is the `.` export mapped to `src/index.ts`.
 - Keep exports pure and portable across browser, server, and package contexts unless a consumer explicitly requires otherwise.
+- Use TypeScript 7 for type checking and tsdown for builds.
 
 ## Work Guidance
 

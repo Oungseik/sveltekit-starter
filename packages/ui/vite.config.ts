@@ -10,10 +10,6 @@ export default defineConfig({
     sveltekit({
       preprocess: vitePreprocess(),
       adapter: adapter(),
-      alias: {
-        "@lib": "../../packages/ui/src/lib",
-        "@lib/*": "../../packages/ui/src/lib/*",
-      },
     }),
   ],
 });

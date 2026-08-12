@@ -14,6 +14,7 @@
 - Package exports expose shadcn-style component entry points with `./*`, shared CSS with `./css`, and style files with `./styles/*`.
 - `src/lib/utils.ts` provides the shared `cn` helper and Svelte component utility types.
 - `components.json` and `jsrepo.config.ts` control generated shadcn-svelte and shadcn-svelte-extras placement.
+- `src/routes/+page.svelte` is an empty compatibility route required while the SvelteKit 3 preview generates invalid path types for route-less projects.
 
 ## Work Guidance
 

@@ -1,20 +1,17 @@
-import type { Handle } from "@sveltejs/kit";
-import { sequence } from "@sveltejs/kit/hooks";
+import { type Handle, sequence } from "@sveltejs/kit/hooks";
 
-import { paraglideMiddleware } from "$lib/paraglide/server";
-import { client } from "$lib/server/orpc/router";
-import { rateLimiter } from "$lib/server/rate-limit";
+import { paraglideMiddleware } from "#lib/paraglide/server";
+import { client } from "#lib/server/orpc/router";
+import { rateLimiter } from "#lib/server/rate-limit";
 
 globalThis.$client = client;
 
 const handleParaglide: Handle = ({ event, resolve }) =>
-  paraglideMiddleware(event.request, ({ request, locale }) => {
-    event.request = request;
-
-    return resolve(event, {
+  paraglideMiddleware(event.request, ({ request, locale }) =>
+    resolve({ ...event, request }, {
       transformPageChunk: ({ html }) => html.replace("%paraglide.lang%", locale),
-    });
-  });
+    })
+  );
 
 const rateLimitHandle: Handle = async ({ event, resolve }) => {
   const clientIP = event.request.headers.get("X-Forwarded-For");
@@ -25,7 +22,7 @@ const rateLimitHandle: Handle = async ({ event, resolve }) => {
   const cost = event.request.method === "GET" || event.request.method === "OPTIONS" ? 1 : 2;
   try {
     await rateLimiter.consume(clientIP, cost);
-  } catch (error) {
+  } catch {
     return new Response("Too many requests", { status: 429 });
   }
 

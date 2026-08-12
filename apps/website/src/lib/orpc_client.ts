@@ -8,7 +8,7 @@ import {
 } from "@orpc/tanstack-query";
 
 import { env } from "$env/dynamic/public";
-import type { Router } from "$lib/server/orpc/router";
+import type { Router } from "#lib/server/orpc/router";
 
 const GET_OPERATION_TYPE = new Set(["query", "streamed", "live", "infinite"]);
 

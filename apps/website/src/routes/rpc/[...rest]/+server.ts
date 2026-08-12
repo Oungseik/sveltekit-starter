@@ -3,7 +3,7 @@ import { RPCHandler } from "@orpc/server/fetch";
 import { BatchHandlerPlugin, StrictGetMethodPlugin } from "@orpc/server/plugins";
 import z from "zod";
 
-import { router } from "$lib/server/orpc/router";
+import { router } from "#lib/server/orpc/router";
 
 import type { RequestHandler } from "./$types";
 
