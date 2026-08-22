@@ -1,9 +1,9 @@
 import "../.svelte-kit/ambient.d.ts";
-
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 import type { RouterClient } from "@orpc/server";
 import type { DehydratedState } from "@tanstack/svelte-query";
+
 import type { Router } from "#lib/server/orpc/router";
 
 declare global {

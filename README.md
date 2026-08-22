@@ -8,7 +8,7 @@ A modern SvelteKit monorepo with shared UI components and configuration.
 - **Shared UI Components**: Reusable components in `packages/ui`
 - **Shared Configuration**: Common config and enums in `packages/config`
 - **Internationalization**: Multi-language support via @inlang/paraglide-js
-- **Tooling**: Turbo, Biome, PNPM
+- **Tooling**: Turbo, Oxc, PNPM
 
 ## Explore with LLM
 
@@ -29,7 +29,7 @@ pnpm install
 pnpm dev
 ```
 
-**Other commands**: `pnpm build`, `pnpm test`, `pnpm check`, `pnpm format`, `pnpm check-types`, `pnpm preview`
+**Other commands**: `pnpm build`, `pnpm test`, `pnpm check`, `pnpm lint`, `pnpm format`, `pnpm check-types`, `pnpm preview`
 
 ## Project Structure
 
@@ -50,7 +50,7 @@ pnpm dev
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [@inlang/paraglide-js](https://github.com/inlang/paraglide-js)
-- [PNPM](https://pnpm.io/) / [Turborepo](https://turbo.build/repo) / [Biome](https://biomejs.dev/) / [Vite](https://vitejs.dev/)
+- [PNPM](https://pnpm.io/) / [Turborepo](https://turbo.build/repo) / [Oxc](https://oxc.rs/) / [Vite](https://vitejs.dev/)
 - [shadcn-svelte](https://shadcn-svelte.com/) + [shadcn-svelte-extras](https://www.shadcn-svelte-extras.com/)
 - [Lucide Svelte](https://lucide.dev/)
 

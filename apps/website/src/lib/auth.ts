@@ -1,9 +1,8 @@
+import { getRequestEvent } from "$app/server";
+import { BETTER_AUTH_SECRET } from "$env/static/private";
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { sveltekitCookies } from "better-auth/svelte-kit";
-
-import { getRequestEvent } from "$app/server";
-import { BETTER_AUTH_SECRET } from "$env/static/private";
 
 import { db } from "./server/db";
 

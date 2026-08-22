@@ -1,4 +1,5 @@
 import { defineRelations } from "drizzle-orm";
+
 import { account, session, twoFactor, user } from "./auth";
 
 export const relations = defineRelations(

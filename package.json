@@ -12,7 +12,8 @@
     "preview": "turbo $@ preview",
     "build": "turbo $@ build",
     "check-types": "turbo $@ check-types",
-    "format": "turbo $@ format",
+    "format": "oxfmt",
+    "lint": "oxlint .",
     "test": "turbo $@ test",
     "shadcn-extras": "pnpm dlx jsrepo add --cwd packages/ui",
     "shadcn": "pnpm dlx shadcn-svelte@latest add -c packages/ui",
@@ -22,7 +23,8 @@
     "db:migrate": "turbo  db:migrate"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.10",
+    "oxfmt": "^0.64.0",
+    "oxlint": "^1.79.0",
     "turbo": "^2.10.11"
   },
   "packageManager": "pnpm@10.18.0"

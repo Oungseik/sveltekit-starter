@@ -9,4 +9,4 @@ windows:
   # window1 is the name of the window
   - editor:
       panes:
-        - 
+        -

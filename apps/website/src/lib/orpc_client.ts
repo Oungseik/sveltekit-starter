@@ -1,3 +1,4 @@
+import { env } from "$env/dynamic/public";
 import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
 import { BatchLinkPlugin } from "@orpc/client/plugins";
@@ -7,7 +8,6 @@ import {
   createTanstackQueryUtils,
 } from "@orpc/tanstack-query";
 
-import { env } from "$env/dynamic/public";
 import type { Router } from "#lib/server/orpc/router";
 
 const GET_OPERATION_TYPE = new Set(["query", "streamed", "live", "infinite"]);

@@ -16,10 +16,6 @@
       in
       {
         devShell = pkgs.mkShell {
-          buildInputs = with pkgs; [
-            biome
-          ];
-
           LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
         };
       }

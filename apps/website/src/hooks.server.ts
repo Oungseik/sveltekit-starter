@@ -8,9 +8,12 @@ globalThis.$client = client;
 
 const handleParaglide: Handle = ({ event, resolve }) =>
   paraglideMiddleware(event.request, ({ request, locale }) =>
-    resolve({ ...event, request }, {
-      transformPageChunk: ({ html }) => html.replace("%paraglide.lang%", locale),
-    })
+    resolve(
+      { ...event, request },
+      {
+        transformPageChunk: ({ html }) => html.replace("%paraglide.lang%", locale),
+      },
+    ),
   );
 
 const rateLimitHandle: Handle = async ({ event, resolve }) => {

@@ -48,6 +48,7 @@ Update parent docs when parent-level structure, ownership, workflow, or child in
 - Verification must reflect an existing check; if no verification framework exists yet, leave it empty and update it when one exists
 
 Default section order:
+
 - Purpose
 - Ownership
 - Local Contracts
@@ -87,7 +88,7 @@ When the user requests a durable behavior change, record it here or in the relev
 
 ## Ownership
 
-- Root owns `package.json`, `pnpm-workspace.yaml`, `turbo.json`, `biome.json`, `flake.*`, `.env.example`, and top-level documentation.
+- Root owns `package.json`, `pnpm-workspace.yaml`, `turbo.json`, `.oxlintrc.json`, `.oxfmtrc.json`, `flake.*`, `.env.example`, and top-level documentation.
 - `apps/AGENTS.md` owns app workspace rules and indexes runnable applications.
 - `packages/AGENTS.md` owns shared package rules and indexes reusable packages.
 - Generated/cache/output directories such as `.turbo/`, `.svelte-kit/`, `build/`, `dist/`, and `node_modules/` are tool output, not source contracts.
@@ -100,7 +101,7 @@ When the user requests a durable behavior change, record it here or in the relev
 - In SvelteKit code, use static environment imports for required variables and dynamic imports only for optional variables.
 - Svelte packages use TypeScript 6 for framework compatibility; non-Svelte TypeScript packages use TypeScript 7 for faster checks when supported.
 - Use tsdown for non-Svelte package builds.
-- Biome is the root formatter/linter baseline. Child configs may narrow file includes for their toolchains.
+- Oxc is the root lint/format baseline: `oxlint` for linting, `oxfmt` for formatting. Child configs may narrow scopes for their toolchains.
 
 ## Work Guidance
 
@@ -111,7 +112,8 @@ When the user requests a durable behavior change, record it here or in the relev
 ## Verification
 
 - Root checks: `pnpm check`, `pnpm check-types`, `pnpm test`, `pnpm build`.
-- Formatting: `pnpm format`.
+- Formatting: `pnpm format` (oxfmt).
+- Linting: `pnpm lint` (oxlint).
 - Database commands require a valid root `.env`: `pnpm db:generate`, `pnpm db:migrate`, `pnpm db:push`, `pnpm db:studio`.
 
 ## Child DOX Index

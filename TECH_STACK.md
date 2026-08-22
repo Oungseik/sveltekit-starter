@@ -1,6 +1,7 @@
 # Essential Libraries for Newcomers
 
 ## Frontend Libraries
+
 - **Svelte**: Reactive frontend framework.
 - **SvelteKit**: Full-stack framework for Svelte.
 - **Tailwind CSS**: Utility-first CSS framework.
@@ -8,6 +9,7 @@
 - **Zod**: Schema validation library.
 
 ## Backend Libraries
+
 - **ORPC**: Type-safe RPC framework.
 - **Better Auth**: Authentication library.
 - **Drizzle ORM**: Type-safe SQL ORM.
@@ -15,10 +17,10 @@
 - **Zod**: Schema validation library.
 
 ## Development Tools
+
 - **TypeScript**: Typed superset of JavaScript.
-- **Biome**: Fast linter and formatter.
+- **Oxc (Oxlint/Oxfmt)**: Fast linter and formatter.
 - **Turbo**: Build system for monorepos.
 - **Vite**: Fast build tool.
-- **ESLint**: JavaScript linter.
-- **Prettier**: Code formatter.
+- **ESLint**: JavaScript linter (Svelte-specific rules).
 - **Vitest**: Testing framework.
