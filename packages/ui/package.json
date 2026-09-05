@@ -19,8 +19,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch --tsgo-experimental-api"
   },
   "devDependencies": {
-    "@internationalized/date": "^3.12.3",
-    "@lucide/svelte": "^1.34.0",
+    "@internationalized/date": "^3.12.4",
+    "@lucide/svelte": "^1.41.0",
     "@sveltejs/adapter-auto": "8.0.0-next.3",
     "@sveltejs/kit": "3.0.0-next.25",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
@@ -35,7 +35,7 @@
     "jsrepo": "^3.8.1",
     "mode-watcher": "^1.1.0",
     "runed": "^0.37.1",
-    "svelte": "^5.56.10",
+    "svelte": "^5.57.0",
     "svelte-check": "^4.7.6",
     "svelte-easy-crop": "^5.0.1",
     "svelte-sonner": "^1.2.1",
