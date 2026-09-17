@@ -22,5 +22,4 @@
 - **Oxc (Oxlint/Oxfmt)**: Fast linter and formatter.
 - **Turbo**: Build system for monorepos.
 - **Vite**: Fast build tool.
-- **ESLint**: JavaScript linter (Svelte-specific rules).
 - **Vitest**: Testing framework.

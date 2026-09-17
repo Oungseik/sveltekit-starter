@@ -13,7 +13,6 @@
 
 <svelte:head>
   {#if !browser}
-    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html createDehydratedScript(dehydrate(data.queryClient))}
   {/if}
 </svelte:head>
