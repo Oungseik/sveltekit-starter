@@ -27,7 +27,7 @@
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
-    "@typescript/native-preview": "7.0.0-dev.20260707.2",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "bits-ui": "^2.19.2",
     "clsx": "^2.1.1",
     "country-flag-icons": "^1.6.20",

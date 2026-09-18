@@ -99,7 +99,7 @@ When the user requests a durable behavior change, record it here or in the relev
 - Keep secrets out of docs and source. `.env.example` documents required variables; local `.env` files hold real values.
 - Root Turbo tasks define cross-package command names; update `turbo.json` when adding durable workspace scripts that should run through Turbo.
 - In SvelteKit code, use static environment imports for required variables and dynamic imports only for optional variables.
-- Svelte packages use TypeScript 6 for framework compatibility; non-Svelte TypeScript packages use TypeScript 7 for faster checks when supported.
+- Svelte packages keep `typescript@6` as svelte-check's engine and alias stable TypeScript 7 as `@typescript/native` for its `--tsgo-experimental-api` checks; non-Svelte TypeScript packages use TypeScript 7 directly.
 - Use tsdown for non-Svelte package builds.
 - Oxc is the only lint/format toolchain: `oxlint` for every lint scope, `oxfmt` for every format scope. No ESLint, Prettier, or their plugins, configs, packages, or suppression comments may be added or reintroduced. Child configs may narrow scopes for their toolchains.
 - `oxlint` covers `.ts`/`.js`/`.tsx` and the `<script>` blocks of `.svelte`, but not Svelte template markup. Template and type correctness is covered by `pnpm check` (svelte-check), not by a Svelte lint plugin.
