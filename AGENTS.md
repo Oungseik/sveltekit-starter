@@ -101,8 +101,8 @@ When the user requests a durable behavior change, record it here or in the relev
 - In SvelteKit code, use static environment imports for required variables and dynamic imports only for optional variables.
 - Svelte packages keep `typescript@6` as svelte-check's engine and alias stable TypeScript 7 as `@typescript/native` for its `--tsgo-experimental-api` checks; non-Svelte TypeScript packages use TypeScript 7 directly.
 - Use tsdown for non-Svelte package builds.
-- Oxc is the only lint/format toolchain: `oxlint` for every lint scope, `oxfmt` for every format scope. No ESLint, Prettier, or their plugins, configs, packages, or suppression comments may be added or reintroduced. Child configs may narrow scopes for their toolchains.
-- `oxlint` covers `.ts`/`.js`/`.tsx` and the `<script>` blocks of `.svelte`, but not Svelte template markup. Template and type correctness is covered by `pnpm check` (svelte-check), not by a Svelte lint plugin.
+- Oxc is the only lint/format toolchain: `oxlint` for every lint scope, `oxfmt` for every format scope. No ESLint, Prettier, or their plugins, configs, packages, or suppression comments may be added or reintroduced. Oxlint-compatible JS plugins such as `@shadcn/lint` are allowed. Child configs may narrow scopes for their toolchains.
+- `oxlint` covers `.ts`/`.js`/`.tsx` and the `<script>` blocks of `.svelte`, but not Svelte template markup. `@shadcn/lint` rules apply only to `.svelte` files through root `.oxlintrc.json`; they can check script class helpers, not markup. Template and type correctness is covered by `pnpm check` (svelte-check).
 
 ## Work Guidance
 
@@ -114,7 +114,7 @@ When the user requests a durable behavior change, record it here or in the relev
 
 - Root checks: `pnpm check`, `pnpm check-types`, `pnpm test`, `pnpm build`.
 - Formatting: `pnpm format` (oxfmt).
-- Linting: `pnpm lint` (oxlint).
+- Linting: `pnpm lint` (Oxlint plus shadcn rules for `.svelte` files). Run after changes and fix lint errors.
 - Database commands require a valid root `.env`: `pnpm db:generate`, `pnpm db:migrate`, `pnpm db:push`, `pnpm db:studio`.
 
 ## Child DOX Index

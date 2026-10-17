@@ -1,6 +1,12 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "plugins": ["eslint", "typescript", "unicorn", "oxc", "import"],
+  "jsPlugins": ["@shadcn/lint"],
+  "settings": {
+    "shadcn": {
+      "componentImports": ["^@repo/ui/"]
+    }
+  },
   "categories": {
     "correctness": "warn",
     "suspicious": "warn"
@@ -12,6 +18,17 @@
   },
   "ignorePatterns": ["**/.svelte-kit", "**/build", "apps/website/src/lib/paraglide"],
   "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "rules": {
+        "shadcn/no-restyle": ["error", { "allow": ["layout"] }],
+        "shadcn/no-raw-colors": "error",
+        "shadcn/no-arbitrary-values": "error",
+        "shadcn/no-inline-styles": "error",
+        "shadcn/no-unknown-classes": "error",
+        "shadcn/require-static-classes": "error"
+      }
+    },
     {
       "files": ["**/*.d.ts"],
       "rules": {
