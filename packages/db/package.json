@@ -20,18 +20,17 @@
     "db:migrate": "bun run with-env drizzle-kit migrate"
   },
   "dependencies": {
-    "dotenv": "^17.4.2",
     "drizzle-orm": "1.0.0-rc.4",
-    "pg": "^8.23.0"
+    "pg": "^8.23.1"
   },
   "devDependencies": {
     "@repo/config": "workspace:*",
-    "@types/bun": "^1.4.2",
+    "@types/bun": "^1.4.3",
     "@types/pg": "^8.23.1",
     "dotenv-cli": "^11.0.0",
     "drizzle-kit": "1.0.0-rc.4",
     "drizzle-seed": "1.0.0-rc.4",
-    "tsdown": "0.23.0",
+    "tsdown": "0.23.1",
     "typescript": "^7.0.2"
   }
 }

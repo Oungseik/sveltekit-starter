@@ -23,9 +23,9 @@
     "db:migrate": "turbo  db:migrate"
   },
   "devDependencies": {
-    "oxfmt": "^0.68.0",
-    "oxlint": "^1.83.0",
-    "turbo": "^2.10.13"
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
+    "turbo": "^2.11.9"
   },
   "packageManager": "pnpm@10.18.0"
 }

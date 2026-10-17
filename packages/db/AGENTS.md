@@ -17,6 +17,7 @@
 - Schema exports are part of the package API through `src/index.ts`.
 - Migrations are durable database artifacts; generate new migrations for schema changes instead of rewriting applied migrations.
 - `compression.polyfill.ts` supports Drizzle Studio under Bun.
+- `with-env` uses `dotenv-cli` to load and expand the root `.env`; it owns the `dotenv` executable.
 - Use TypeScript 7 for type checking and tsdown for builds.
 - The Drizzle RC Bun SQL declarations cannot currently be bundled by tsdown, so the package build emits JavaScript only; source TypeScript remains the exported type contract.
 
