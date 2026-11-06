@@ -1,6 +1,74 @@
 packages:
   - apps/*
   - packages/*
-onlyBuiltDependencies:
-  - "@tailwindcss/oxide"
-  - esbuild
+engineStrict: true
+allowBuilds:
+  "@tailwindcss/oxide": true
+  esbuild: true
+minimumReleaseAgeExclude:
+  - "@better-auth/core@1.7.18"
+  - "@better-auth/drizzle-adapter@1.7.18"
+  - "@better-auth/kysely-adapter@1.7.18"
+  - "@better-auth/memory-adapter@1.7.18"
+  - "@better-auth/mongo-adapter@1.7.18"
+  - "@better-auth/prisma-adapter@1.7.18"
+  - "@better-auth/telemetry@1.7.18"
+  - "@inlang/paraglide-js@3.2.0"
+  - "@lucide/svelte@1.70.0"
+  - "@orpc/client@1.16.2"
+  - "@orpc/contract@1.16.2"
+  - "@orpc/interop@1.16.2"
+  - "@orpc/server@1.16.2"
+  - "@orpc/shared@1.16.2"
+  - "@orpc/standard-server-aws-lambda@1.16.2"
+  - "@orpc/standard-server-fastify@1.16.2"
+  - "@orpc/standard-server-fetch@1.16.2"
+  - "@orpc/standard-server-node@1.16.2"
+  - "@orpc/standard-server-peer@1.16.2"
+  - "@orpc/standard-server@1.16.2"
+  - "@orpc/tanstack-query@1.16.2"
+  - "@oxfmt/binding-android-arm-eabi@0.77.0"
+  - "@oxfmt/binding-android-arm64@0.77.0"
+  - "@oxfmt/binding-darwin-arm64@0.77.0"
+  - "@oxfmt/binding-darwin-x64@0.77.0"
+  - "@oxfmt/binding-freebsd-x64@0.77.0"
+  - "@oxfmt/binding-linux-arm-gnueabihf@0.77.0"
+  - "@oxfmt/binding-linux-arm-musleabihf@0.77.0"
+  - "@oxfmt/binding-linux-arm64-gnu@0.77.0"
+  - "@oxfmt/binding-linux-arm64-musl@0.77.0"
+  - "@oxfmt/binding-linux-ppc64-gnu@0.77.0"
+  - "@oxfmt/binding-linux-riscv64-gnu@0.77.0"
+  - "@oxfmt/binding-linux-riscv64-musl@0.77.0"
+  - "@oxfmt/binding-linux-s390x-gnu@0.77.0"
+  - "@oxfmt/binding-linux-x64-gnu@0.77.0"
+  - "@oxfmt/binding-linux-x64-musl@0.77.0"
+  - "@oxfmt/binding-openharmony-arm64@0.77.0"
+  - "@oxfmt/binding-win32-arm64-msvc@0.77.0"
+  - "@oxfmt/binding-win32-ia32-msvc@0.77.0"
+  - "@oxfmt/binding-win32-x64-msvc@0.77.0"
+  - "@oxlint/binding-android-arm-eabi@1.92.0"
+  - "@oxlint/binding-android-arm64@1.92.0"
+  - "@oxlint/binding-darwin-arm64@1.92.0"
+  - "@oxlint/binding-darwin-x64@1.92.0"
+  - "@oxlint/binding-freebsd-x64@1.92.0"
+  - "@oxlint/binding-linux-arm-gnueabihf@1.92.0"
+  - "@oxlint/binding-linux-arm-musleabihf@1.92.0"
+  - "@oxlint/binding-linux-arm64-gnu@1.92.0"
+  - "@oxlint/binding-linux-arm64-musl@1.92.0"
+  - "@oxlint/binding-linux-ppc64-gnu@1.92.0"
+  - "@oxlint/binding-linux-riscv64-gnu@1.92.0"
+  - "@oxlint/binding-linux-riscv64-musl@1.92.0"
+  - "@oxlint/binding-linux-s390x-gnu@1.92.0"
+  - "@oxlint/binding-linux-x64-gnu@1.92.0"
+  - "@oxlint/binding-linux-x64-musl@1.92.0"
+  - "@oxlint/binding-openharmony-arm64@1.92.0"
+  - "@oxlint/binding-win32-arm64-msvc@1.92.0"
+  - "@oxlint/binding-win32-ia32-msvc@1.92.0"
+  - "@oxlint/binding-win32-x64-msvc@1.92.0"
+  - better-auth@1.7.18
+  - oxfmt@0.77.0
+  - oxlint@1.92.0
+  - rate-limiter-flexible@11.3.0
+  - rolldown-plugin-dts@0.30.0
+  - svelte-toolbelt@0.13.0
+  - tsdown@0.23.7

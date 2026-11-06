@@ -23,10 +23,10 @@
     "db:migrate": "turbo  db:migrate"
   },
   "devDependencies": {
-    "@shadcn/lint": "^0.2.1",
-    "oxfmt": "^0.73.0",
-    "oxlint": "^1.88.0",
-    "turbo": "^2.11.9"
+    "@shadcn/lint": "^0.2.5",
+    "oxfmt": "^0.77.0",
+    "oxlint": "^1.92.0",
+    "turbo": "^2.11.10"
   },
-  "packageManager": "pnpm@10.18.0"
+  "packageManager": "pnpm@12.18.0"
 }

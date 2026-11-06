@@ -16,7 +16,7 @@ Before diving into the code, paste the project structure or this README into you
 
 ## Getting Started
 
-**Prerequisites**: Node.js v20+, PNPM v10+
+**Prerequisites**: Node.js v24.15+ (24 LTS), PNPM v12.18.0 (pinned in `package.json`)
 
 ```bash
 # Clone (click "Use this template" or clone directly)

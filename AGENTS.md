@@ -96,6 +96,7 @@ When the user requests a durable behavior change, record it here or in the relev
 ## Local Contracts
 
 - Use pnpm workspace commands from the root unless a package-local script is intentionally narrower.
+- Use the pnpm version pinned in root `package.json`. Keep pnpm settings in `pnpm-workspace.yaml`, including workspace-wide `engineStrict` validation and dependency build-script approvals under `allowBuilds`.
 - Keep secrets out of docs and source. `.env.example` documents required variables; local `.env` files hold real values.
 - Root Turbo tasks define cross-package command names; update `turbo.json` when adding durable workspace scripts that should run through Turbo.
 - In SvelteKit code, use static environment imports for required variables and dynamic imports only for optional variables.
