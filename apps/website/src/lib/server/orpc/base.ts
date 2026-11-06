@@ -28,9 +28,7 @@ export const os = base.$context<Context>().errors({
   FORBIDDEN: {},
   NOT_FOUND: {},
   INTERNAL_SERVER_ERROR: {},
-  INPUT_VALIDATION_FAILED: {
-    status: 422,
-  },
+  INPUT_VALIDATION_FAILED: {},
 });
 
 export const authMiddleware = os.middleware(async ({ context, next }) => {

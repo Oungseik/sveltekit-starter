@@ -27,9 +27,9 @@
   "dependencies": {
     "@inlang/paraglide-js": "^3.2.0",
     "@lucide/svelte": "^1.70.0",
-    "@orpc/client": "^1.16.2",
-    "@orpc/server": "^1.16.2",
-    "@orpc/tanstack-query": "^1.16.2",
+    "@orpc/client": "2.0.0-beta.48",
+    "@orpc/server": "2.0.0-beta.48",
+    "@orpc/tanstack-query": "2.0.0-beta.48",
     "@repo/config": "workspace:*",
     "@repo/db": "workspace:*",
     "@repo/ui": "workspace:*",

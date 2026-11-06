@@ -1,10 +1,10 @@
 import { browser } from "$app/env";
-import { StandardRPCJsonSerializer } from "@orpc/client/standard";
+import { RPCJsonSerializer } from "@orpc/client";
 import { QueryClient, hydrate } from "@tanstack/svelte-query";
 
 import type { LayoutLoad } from "./$types";
 
-const serializer = new StandardRPCJsonSerializer();
+const serializer = new RPCJsonSerializer();
 
 export const load: LayoutLoad = async () => {
   const queryClient = new QueryClient({
@@ -15,13 +15,12 @@ export const load: LayoutLoad = async () => {
       },
       dehydrate: {
         serializeData(data) {
-          const [json, meta] = serializer.serialize(data);
-          return { json, meta };
+          return serializer.serializeJson(data);
         },
       },
       hydrate: {
         deserializeData(data) {
-          return serializer.deserialize(data.json, data.meta);
+          return serializer.deserializeJson(data);
         },
       },
     },
