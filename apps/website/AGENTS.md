@@ -1,38 +1,12 @@
-# Website App
+# Website (SvelteKit)
 
-## Purpose
+- Owns `src/`, `static/`, `i18n/`, `project.inlang/`, and app-local configs; shared UI/database/config live in `packages/`.
+- `#lib` is the app import alias; consume shared UI through `@repo/ui`.
+- Follow SvelteKit route conventions. Keep server-only code in `src/lib/server/`; database access goes through `src/lib/server/db.ts` → `@repo/db`.
+- oRPC router: `src/lib/server/orpc/router.ts`; endpoint: `src/routes/rpc/[...rest]/+server.ts`. Keep validation/error handling in the endpoint or shared base.
+- Better Auth: `src/lib/auth.ts`; locals/session types: `src/app.d.ts`.
+- Paraglide output in `src/lib/paraglide/` is generated; edit `project.inlang/` and `i18n/` instead.
+- App styles/theme: `src/app.css`; reusable component styling: `packages/ui`.
+- `vite.config.ts` loads env from the repository root; root owns `.env.example`.
 
-- SvelteKit application for the website.
-- Owns browser/server routes, hooks, app shell, oRPC endpoint wiring, auth integration, rate limiting, i18n, and app-level theme CSS.
-
-## Ownership
-
-- Owns `src/routes/`, `src/lib/`, `src/hooks.ts`, `src/hooks.server.ts`, `src/app.*`, `static/`, `i18n/`, `project.inlang/`, and app-local tool configs.
-- Does not own shared UI primitives, database schema/client code, or cross-package constants; use `packages/ui`, `packages/db`, and `packages/config`.
-- Root owns `.env.example`; app runtime env is loaded from the monorepo root via `vite.config.ts`.
-
-## Local Contracts
-
-- `#lib` is the app-local subpath import declared in `package.json`. Shared UI is consumed through `@repo/ui`.
-- oRPC procedures are collected in `src/lib/server/orpc/router.ts` and exposed by `src/routes/rpc/[...rest]/+server.ts`.
-- Server database access goes through `src/lib/server/db.ts`, which calls `@repo/db`.
-- Better Auth setup lives in `src/lib/auth.ts`; the session shape used by SvelteKit locals is declared in `src/app.d.ts`.
-- Paraglide output under `src/lib/paraglide/` is generated from `project.inlang/` and `i18n/`; prefer editing source messages/settings over generated files.
-- Required environment variables use SvelteKit static imports; optional variables use dynamic imports.
-
-## Work Guidance
-
-- Use SvelteKit conventions for route files and keep server-only code under `src/lib/server`.
-- Put app-only styling and theme tokens in `src/app.css`; move reusable component styling to `packages/ui`.
-- Keep oRPC validation/error behavior at the route endpoint or shared oRPC base so handlers stay small.
-
-## Verification
-
-- `pnpm --filter website check`
-- `pnpm --filter website test`
-- `pnpm --filter website build`
-- `pnpm --filter website lint`
-
-## Child DOX Index
-
-- None.
+Checks: `pnpm --filter website check` (also `test`, `build`, `lint`).
