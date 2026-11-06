@@ -6,20 +6,16 @@
   "type": "module",
   "imports": {
     "#lib": "./src/lib/index.ts",
-    "#lib/paraglide/*": "./src/lib/paraglide/*.js",
-    "#lib/server/*": "./src/lib/server/*.ts",
-    "#lib/server/orpc/*": "./src/lib/server/orpc/*.ts",
-    "#lib/server/orpc/handlers/*": "./src/lib/server/orpc/handlers/*/index.ts",
-    "#lib/utils": "./src/lib/utils/index.ts"
+    "#lib/*": "./src/lib/*"
   },
   "scripts": {
     "dev": "bunx --bun vite dev",
     "build": "bunx --bun vite build",
     "preview": "bunx --bun vite preview --host",
-    "prepare": "svelte-kit sync || echo ''",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo-experimental-api",
-    "check-types": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --tsgo-experimental-api",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch --tsgo-experimental-api",
+    "prepare": "paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide && svelte-kit sync",
+    "check": "pnpm run prepare && svelte-check --tsconfig ./tsconfig.json --tsgo-experimental-api",
+    "check-types": "pnpm run check",
+    "check:watch": "pnpm run prepare && svelte-check --tsconfig ./tsconfig.json --watch --tsgo-experimental-api",
     "lint": "oxlint .",
     "test:unit": "bunx --bun vitest",
     "test": "npm run test:unit -- --run --passWithNoTests"

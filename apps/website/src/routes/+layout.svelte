@@ -3,7 +3,7 @@
   import { ModeWatcher } from "mode-watcher";
 
   import { browser } from "$app/env";
-  import { createDehydratedScript } from "#lib/utils";
+  import { createDehydratedScript } from "#lib/utils/index.ts";
 
   import "../app.css";
   import type { LayoutProps } from "./$types";

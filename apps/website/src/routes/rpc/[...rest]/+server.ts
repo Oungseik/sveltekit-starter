@@ -2,7 +2,7 @@ import { COMMON_ERROR_STATUS_MAP, ORPCError, ValidationError, onError } from "@o
 import { RPCHandler } from "@orpc/server/fetch";
 import { BatchHandlerPlugin } from "@orpc/server/plugins";
 
-import { router } from "#lib/server/orpc/router";
+import { router } from "#lib/server/orpc/router.ts";
 
 import type { RequestHandler } from "./$types";
 

@@ -1,8 +1,8 @@
 import { type Handle, sequence } from "@sveltejs/kit/hooks";
 
-import { paraglideMiddleware } from "#lib/paraglide/server";
-import { client } from "#lib/server/orpc/router";
-import { rateLimiter } from "#lib/server/rate-limit";
+import { paraglideMiddleware } from "#lib/paraglide/server.js";
+import { client } from "#lib/server/orpc/router.ts";
+import { rateLimiter } from "#lib/server/rate-limit.ts";
 
 globalThis.$client = client;
 

@@ -36,7 +36,7 @@ For database/oRPC changes. Tooling: [AGENTS.md](AGENTS.md). Paths are repository
 
 ## SSR with oRPC
 
-- Import `orpc` from `#lib/orpc_client`. Components use TanStack `createQuery`/`createInfiniteQuery`/`createMutation` with matching oRPC options; no direct RPC calls.
+- Import `orpc` from `#lib/orpc_client.ts`. Components use TanStack `createQuery`/`createInfiniteQuery`/`createMutation` with matching oRPC options; no direct RPC calls.
 - Root `+layout.ts`: QueryClient per load, 60-second stale time, browser-only automatic queries. Never share SSR QueryClients across requests; local `enabled` conditions retain browser guard.
 - Universal loads: `await parent()`, then await `queryClient.fetchQuery(orpc.*.queryOptions(...))`. Components match procedure/input/query keys; no duplicate application records from loads. Infinite/load-more lists are browser-only.
 - SSR: direct server router client; browser: HTTP POST `/rpc`. Hooks install stateless `globalThis.$client`; resolve session/context per call.

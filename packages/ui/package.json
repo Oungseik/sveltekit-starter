@@ -5,7 +5,7 @@
   "type": "module",
   "imports": {
     "#lib": "./src/lib/index.ts",
-    "#lib/*": "./src/lib/*/index.ts"
+    "#lib/*": "./src/lib/*"
   },
   "exports": {
     "./*": "./src/lib/components/ui/*/index.js",

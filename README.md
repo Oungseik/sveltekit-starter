@@ -1,6 +1,6 @@
 # Svelte-Kit Starter
 
-A modern SvelteKit monorepo with shared UI components and configuration.
+A SvelteKit 3 monorepo with shared UI components and configuration.
 
 ## Overview
 
@@ -68,7 +68,26 @@ Consult the documentation for component names.
 
 ## Environment Variables
 
-Check `.env.example` in `apps/website` for required environment variables.
+Copy the root `.env.example` to a root `.env`. The website loads this file via
+`env.dir` in `apps/website/vite.config.ts`; database tools use it too.
+
+Variables are declared in `apps/website/src/env.ts` using SvelteKit 3's
+[`defineEnvVars`](https://svelte.dev/docs/kit/environment-variables):
+
+- `BETTER_AUTH_SECRET` and `DATABASE_URL` are required private build-time values,
+  imported from `$app/env/private`. Changing them requires rebuilding.
+- `PUBLIC_ENVIRONMENT` is an optional public runtime value, imported from
+  `$app/env/public`. Setting it to `development` disables oRPC batching; leaving it
+  unset enables batching. Production deployments supply runtime values through
+  their hosting environment.
+
+SvelteKit configuration lives in each workspace's `vite.config.ts`. Internal
+imports use `#lib/*` with file extensions (for example, `#lib/orpc_client.ts`). See
+the [SvelteKit 3 migration guide](https://svelte.dev/docs/kit/migrating-to-sveltekit-3)
+for the complete list of breaking changes.
+
+External JSON clients calling `/rpc` should send `Content-Type: application/json`.
+SvelteKit 3 rejects cross-origin mutating requests that omit a content type.
 
 ## Resources
 

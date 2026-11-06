@@ -3,10 +3,10 @@
  * */
 // import { isSpanContextValid, trace } from "@opentelemetry/api";
 // import pino from "pino";
-// import { env } from "$env/dynamic/public";
+// import { PUBLIC_ENVIRONMENT } from "$app/env/public";
 //
 // const LOG_LEVEL = process.env.LOG_LEVEL || "info";
-// const ENVIRONMENT = env.PUBLIC_ENVIRONMENT;
+// const ENVIRONMENT = PUBLIC_ENVIRONMENT;
 //
 // function getTraceContext() {
 //   const activeSpan = trace.getActiveSpan();
